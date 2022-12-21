@@ -43,6 +43,7 @@ dictionaryRu = {
     10: "ФЩЪ",
 }
 
+
 def select_lang():
     while True:
         try:
@@ -51,8 +52,7 @@ def select_lang():
                 print("Вы не выбрали язык")
                 exit()
             else:
-                #print("Введите слово: ")
-                text= input("Введите слово: ").upper()
+                text = input("Введите слово: ").upper()
                 return lang, text
                 break
         except ValueError:
@@ -61,8 +61,7 @@ def select_lang():
 
 l, text = select_lang()
 
-if l==1:
-	print(sum([k for i in text for k, v in dictionaryEn.items() if i in v]))
+if l == 1:
+    print(sum([k for i in text for k, v in dictionaryEn.items() if i in v]))
 else:
-	print(sum([k for i in text for k, v in dictionaryRu.items() if i in v]))
-
+    print(sum([k for i in text for k, v in dictionaryRu.items() if i in v]))
