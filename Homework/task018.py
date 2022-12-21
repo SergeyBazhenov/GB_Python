@@ -8,3 +8,27 @@
 # Ввод: 7
 # 1 2 1 8 9 6 5 4 3 4
 # Вывод: 6
+import random
+
+n = int(input("Введите число N: "))
+array = []
+for num in range(n):
+    random_number = round(random.randint(1, n))
+    array.append(random_number)
+
+print(array)
+x = int(input("Введите число X: "))
+
+
+def find_num(count):
+
+    for i in range(0, len(array)):
+        if array[i] == x - count:
+            return array[i]
+        elif array[i] == x + count:
+            return array[i]
+
+    return find_num(count + 1)
+
+
+print(find_num(0))
