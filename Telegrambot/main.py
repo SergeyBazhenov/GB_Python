@@ -4,7 +4,7 @@ from bot_commands import *
 from weather import *
 #import emoji
 
-app = ApplicationBuilder().token("5983506085:AAH51vZUMQG5vJA3tUEhjvb_yAB9-rW4a7E").build()
+app = ApplicationBuilder().token("Token").build()
 print("Server start")
 
 app.add_handler(CommandHandler('start', start))
