@@ -2,7 +2,7 @@ import requests
 import json
 import math
 
-APPID = "TOKEN"  
+APPID = "bcf0f458a0dee1724256aeb4cb7df12e"  
 URL_BASE = "http://api.openweathermap.org/data/2.5/forecast"
 URL_GEO  = "http://api.openweathermap.org/geo/1.0/direct"
 lat = 0.0

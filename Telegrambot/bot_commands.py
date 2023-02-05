@@ -1,8 +1,9 @@
-from telegram import Update
-from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes
+from telegram import *
+from telegram.ext import *
 from datetime import datetime, date, time
 from weather import *
 from spy import *
+from tic_tac_toe import Game 
 
 
 async def start(update, context):
@@ -14,6 +15,7 @@ async def start(update, context):
 - /sun я очень умный и умею складывать два числа "Например введите /sum 2 2".
 - /NY я знаю сколько дней осталось до Нового Года"
 - /W_City я знаю какая погода в любом городе. Например введите /W_City "Название города"
+- /Game Крестики нолики.
 - ...
 Напоминаю, что при запуске чат-бота Вы передаёте
 персональные данные, даете согласие на их обработку
@@ -65,4 +67,19 @@ async def New_Year(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     log(update, context)
     await update.message.reply_text(f'{days2NY()}')
 
-#print(days2NY())
+async def game_command(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
+    log(update, context)
+    await update.message.reply_text('Введите номер ячейки в которую хотите поставить крестик.')
+    await update.message.reply_text(f'{showMatrix()}')
+
+async def message_response(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
+    log(update, context)
+    text = update.message.text
+    player(text)
+    await update.message.reply_text(f'{showMatrix()}')
+    await update.message.reply_text(f'{comp(matrix)}')
+    await update.message.reply_text(f'{showMatrix()}')
+    await update.message.reply_text(f'{checkWin()}')
+    #return
+   
+    
