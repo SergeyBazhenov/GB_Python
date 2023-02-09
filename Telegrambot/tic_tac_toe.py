@@ -10,7 +10,7 @@ def showMatrix():
 def checkWin():
     if matrix[0] == matrix[1] == matrix[2]:
         return(f'Победили {matrix[0]}')
-        break
+        
     elif matrix[3] == matrix[4] == matrix[5]:
         return(f'Победили {matrix[3]}')
         

@@ -3,7 +3,7 @@ from telegram.ext import *
 from datetime import datetime, date, time
 from weather import *
 from spy import *
-from tic_tac_toe import Game 
+from tic_tac_toe import * 
 
 
 async def start(update, context):
